@@ -4,7 +4,7 @@ from demoqa_tests.data.users import User
 import allure
 
 
-def test_fill_and_submit_form():
+def test_fill_and_submit_form(configure_browser):
     registration_page = RegistrationPage()
 
     katrin = User(

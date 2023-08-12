@@ -1,5 +1,5 @@
 
-from selene import be, have, command
+from selene import be, have
 from demoqa_tests import resource
 from selene import browser
 
@@ -23,9 +23,9 @@ class RegistrationPage:
 
     def open(self):
         browser.open('/automation-practice-form')
-        browser.element('#adplus-anchor').perform(command.js.remove)
-        browser.element('#close-fixedban').perform(command.js.remove)
-        browser.element('footer').perform(command.js.remove)
+        browser.driver.execute_script("$('#adplus-anchor').remove()")
+        browser.driver.execute_script("$('footer').remove()")
+        browser.driver.execute_script("$('#fixedban').remove()")
 
     def type_first_name(self, first_name):
         browser.element('#firstName').should(be.blank).type(first_name)

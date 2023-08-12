@@ -27,3 +27,5 @@ def test_fill_and_submit_form(configure_browser):
         registration_page.register(katrin)
     with allure.step("Assert registered and registration info correct"):
         registration_page.should_registered_user(katrin)
+
+
